@@ -9,34 +9,33 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="form mx-auto mt-5">
-        <form method="POST" class="row d-inline-flex justify-content-center p-3">
+    <div class="container formStyle mx-auto mt-5">
+        <form method="POST" class="row d-inline-flex justify-content-center p-3" th:action="@{/saveUser}" th:object="${user}">
             <div class="row">
                 <h2 class="mx-auto"> Register</h2>
             </div>
             <div class="row m-2 p-2">
-                <input class="form-control form-control-lg w-3" type="text" placeholder="email">
+                <input class="form-control form-control-lg w-3" th:field="*{email}" type="text" placeholder="email">
             </div>
             <div class="row m-2 p-2">
-                <input class="form-control form-control-lg w-3" type="text" placeholder="firstname">
+                <input class="form-control form-control-lg w-3" th:field="*{firstName}" type="text" placeholder="firstname">
             </div>
             <div class="row m-2 p-2">
-                <input class="form-control form-control-lg w-3" type="text" placeholder="lastname">
+                <input class="form-control form-control-lg w-3" th:field="*{lastName}" type="text" placeholder="lastname">
             </div>
             <div class="row m-2 p-2">
-                <input class="form-control form-control-lg w-3" type="text" placeholder="country">
+                <input class="form-control form-control-lg w-3" th:field="*{username}" type="text" placeholder="userName">
             </div>
             <div class="row m-2 p-2">
-                <input class="form-control form-control-lg w-3" type="text" placeholder="province">
-            </div>
-            <div class="row m-2 p-2">
-                <input class="form-control form-control-lg w-3" type="text" placeholder="password">
+                <input class="form-control form-control-lg w-3" th:field="*{password}" type="text" placeholder="password">
             </div>
             <div>
                 <button type="submit" class="btn btn-primary mx-auto">Login</button>
             </div>
         </form>
     </div>
+
+    <a th:href="@{/login}">Back to Login</a>
     
 </body>
 </html>
