@@ -8,24 +8,25 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RecipeServiceImpl implements RecipeService {
+public class RecipeServiceImpl implements RecipeService{
 
     @Autowired
     RecipeRepository recipeRepository;
 
+
     @Override
     public Recipe getRecipe(Long id) {
-        return recipeRepository.findById(id).get();
+        return null;
     }
 
     @Override
     public Recipe saveRecipe(Recipe recipe) {
-        return recipeRepository.save(recipe);
+        return null;
     }
 
     @Override
     public void deleteRecipe(Long id) {
-        recipeRepository.deleteById(id);
+
     }
 
     @Override
@@ -33,4 +34,3 @@ public class RecipeServiceImpl implements RecipeService {
         return null;
     }
 }
-

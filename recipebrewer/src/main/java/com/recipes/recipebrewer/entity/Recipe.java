@@ -20,6 +20,8 @@ public class Recipe {
     @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
+    @Column(name = "recipe_name", nullable = false)
+    private String recipeName;
     @Column(name = "ingredient", nullable = false)
     private String ingredient;
     @Column(name = "instructions", nullable = false)
@@ -27,5 +29,7 @@ public class Recipe {
     @Column(name = "cookTime", nullable = false)
     private String cookTime;
 
-
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 }
