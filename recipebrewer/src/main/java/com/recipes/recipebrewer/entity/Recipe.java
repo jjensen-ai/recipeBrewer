@@ -28,7 +28,7 @@ public class Recipe {
     private String instructions;
     @Column(name = "cookTime", nullable = false)
     private String cookTime;
-    private String directions;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")

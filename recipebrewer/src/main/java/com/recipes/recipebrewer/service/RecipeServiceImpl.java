@@ -16,17 +16,17 @@ public class RecipeServiceImpl implements RecipeService{
 
     @Override
     public Recipe getRecipe(Long id) {
-        return null;
+        return recipeRepository.findById(id).get();
     }
 
     @Override
     public Recipe saveRecipe(Recipe recipe) {
-        return null;
+        return recipeRepository.save(recipe);
     }
 
     @Override
     public void deleteRecipe(Long id) {
-
+        recipeRepository.deleteById(id);
     }
 
     @Override
