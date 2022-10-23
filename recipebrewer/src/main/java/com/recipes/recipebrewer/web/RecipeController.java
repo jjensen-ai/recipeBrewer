@@ -38,4 +38,6 @@ public class RecipeController {
         return new ResponseEntity<>(recipeService.getRecipes(), HttpStatus.OK);
     }
 
+    
+
 }

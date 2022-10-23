@@ -1,4 +1,4 @@
-package com.recipes.recipebrewer.Models;
+package com.recipes.recipebrewer.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
