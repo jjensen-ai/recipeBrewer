@@ -38,6 +38,11 @@ public class RecipeController {
         return new ResponseEntity<>(recipeService.getRecipes(), HttpStatus.OK);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Recipe> updateRecipe(@PathVariable Long id, @Validated @RequestBody Recipe recipe) {
+        return new ResponseEntity<>(recipeService.updateRecipe(id, recipe), HttpStatus.OK);
+    }
+
     
 
 }

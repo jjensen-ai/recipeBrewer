@@ -24,10 +24,12 @@ public class UserController {
     }
 
     //Create a new user
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<User> saveUser(@Validated @RequestBody User user) {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
+
+    
 
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteUser(@PathVariable Long id) {
