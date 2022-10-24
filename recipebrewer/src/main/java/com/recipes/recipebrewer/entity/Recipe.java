@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import org.springframework.context.annotation.Bean;
+
 
 @Getter
 @Setter
@@ -29,8 +31,4 @@ public class Recipe {
     @Column(name = "cookTime", nullable = false)
     private String cookTime;
 
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private User user;
 }

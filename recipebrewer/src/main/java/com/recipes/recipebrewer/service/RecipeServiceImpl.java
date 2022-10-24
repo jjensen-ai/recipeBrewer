@@ -18,7 +18,7 @@ public class RecipeServiceImpl implements RecipeService{
     public Recipe getRecipe(Long id) {
         return recipeRepository.findById(id).get();
     }
-
+    
     @Override
     public Recipe saveRecipe(Recipe recipe) {
         return recipeRepository.save(recipe);
@@ -30,7 +30,13 @@ public class RecipeServiceImpl implements RecipeService{
     }
 
     @Override
-    public List<Recipe> getRecipes() {
-        return null;
+    public Recipe recipeName(Recipe name){
+        return recipeRepository.findByRecipeName(name);
     }
+
+    @Override
+    public List<Recipe> getRecipes() {
+        return (List<Recipe>) recipeRepository.findAll();
+    }
+
 }

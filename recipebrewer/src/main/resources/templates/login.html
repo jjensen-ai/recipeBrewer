@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container formStyle mx-auto mt-5">
-        <form method="GET" class="row g-3 d-inline-flex justify-content-center p-3">
+        <form method="POST" class="row g-3 d-inline-flex justify-content-center p-3" th:action="@{/}">
             <div class="row col-auto">
                 <h2 class="mx-auto">Login</h2>
             </div>
@@ -21,13 +21,14 @@
                 <input class="form-control form-control-lg" type="text" placeholder="Password">
             </div>
             <div class="row mt-4 p-3">
-                <button type="submit" class="btn btn-primary mx-auto">Login</button>
+                <button type="submit" class="btn btn-primary mx-auto">
+                    <a th:href="@{/recipes}"> Login</a>
+                </button>
             </div>
             <div class="row col-auto">
-                <a href="/register"> Register</a>
+                <a th:href="@{/register}"> Register</a>
             </div>
         </form>
         
     </div>
-</body>
-</html>
+    <div th:replace="fragments/footer"></div>

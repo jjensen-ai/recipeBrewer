@@ -1,3 +1,44 @@
+/* All Styling */
+*{
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+/* Nav Styling */
+
+
+body {
+    background-color: #000818;
+    padding: 1em;
+  }
+
+
+
+
+
+
+
+
+
+/* DashboardStyles */
+
+.favRecipes{
+    width:25em;
+    height:auto;
+    background:black;
+    margin:2em;
+    padding: 0;
+}
+
+/* Form Styles */
 .formStyle{
     display: flex;
     align-items: center;
@@ -5,4 +46,10 @@
     width: 35vw;
     height: auto;
     background-color: #0F0F0F;
+    border-radius: 1em;
 }
+
+.nav-link{
+    color:antiquewhite;
+}
+

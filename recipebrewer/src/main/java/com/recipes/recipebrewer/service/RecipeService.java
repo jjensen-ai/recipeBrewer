@@ -9,6 +9,7 @@ import java.util.List;
 public interface RecipeService {
     Recipe getRecipe(Long id);
     Recipe saveRecipe(Recipe recipe);
+    Recipe recipeName(Recipe recipe);
     void deleteRecipe(Long id);
     List<Recipe> getRecipes();
 }

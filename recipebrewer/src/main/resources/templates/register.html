@@ -30,12 +30,11 @@
                 <input class="form-control form-control-lg w-3" th:field="*{password}" type="text" placeholder="password">
             </div>
             <div>
-                <button type="submit" class="btn btn-primary mx-auto">Login</button>
+                <button type="submit" class="btn btn-primary mx-auto">Register</button>
             </div>
         </form>
     </div>
 
     <a th:href="@{/login}">Back to Login</a>
     
-</body>
-</html>
+    <div th:replace="fragments/footer"></div>
