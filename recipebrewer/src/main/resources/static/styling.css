@@ -16,7 +16,7 @@ a{
 
 
 body {
-    background-color: #000818;
+    background-color: #121111;
     padding: 1em;
   }
 
@@ -47,6 +47,7 @@ body {
     height: auto;
     background-color: #0F0F0F;
     border-radius: 1em;
+    box-shadow: 10px 10px 5px #0d0d0d;
 }
 
 .nav-link{
