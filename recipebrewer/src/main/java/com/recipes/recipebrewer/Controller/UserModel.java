@@ -11,6 +11,8 @@ Description: This is our user controller that redirects to html pages related to
 
 package com.recipes.recipebrewer.Controller;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,46 +20,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.recipes.recipebrewer.entity.User;
+import com.recipes.recipebrewer.service.UserService;
 import com.recipes.recipebrewer.service.UserServiceImpl;
 
 @Controller
 public class UserModel {
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
-    @GetMapping("/")
-    public String login(Model model) {
-
-        return "login";
-    }
-
+    // HttpSession
+    private HttpSession userSession;
+    
     @GetMapping("/profile")
     public String profile(Model model){
         return "profile";
     }
     
-    
-    @GetMapping("/register")
-    public String addUser(Model model){
-       model.addAttribute("user", new User());
-        return "register";
-    }
+    // @GetMapping("/loginSuccess")
+    // public String loginSuccess(Model model){
+    //     return "recipes";
+    // }
+    // @PostMapping("/loginSuccess")
+    // public String loginSuccess(User user, HttpSession session, HttpServlet request) {
+    //     // invalidate session
+    //     session.invalidate();
 
-    @PostMapping("/saveUser")
-    public String saveUser(@ModelAttribute User user){
-    
-        userService.saveUser(user);
-        return "redirect:/";
-    }
-
-    @GetMapping("/loginSuccess")
-    public String loginSuccess(Model model){
-        return "recipes";
-    }
+    //     // create new session
+        
+    // }
 
     @PostMapping("/submitItem")
     public String handleSubmitLog(@Valid User user, BindingResult result) {

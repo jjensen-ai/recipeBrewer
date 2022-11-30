@@ -23,5 +23,9 @@ public interface UserService {
     User findByEmail(String email);
     User findByPassword(String password);
     void deleteUser(Long id);
+
+    // This checks if the users is in the database
+    // boolean checkUser(User user);
+
     List<User> getUsers();
 }
