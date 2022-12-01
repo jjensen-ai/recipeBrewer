@@ -12,17 +12,18 @@ package com.recipes.recipebrewer.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import com.recipes.recipebrewer.entity.Recipe;
 
 import com.recipes.recipebrewer.service.RecipeServiceImpl;
-
 @Controller
 public class RecipeModel {
     @Autowired
@@ -35,10 +36,19 @@ public class RecipeModel {
     }
 
     @GetMapping("/createrecipe")
-    public String addRecipe(Model model){
+    public String addRecipe(Model model, @RequestParam(required = false) Long id){
+
         model.addAttribute("recipes", new Recipe());
         return "createrecipe";
     }
+
+    @GetMapping("/updateRecipe/{id}")
+    public String showUpdate(@PathVariable(value = "id") Long id, Model model){
+        Recipe updateRecipe = recipeRepo.getRecipe(id);
+        model.addAttribute("recipes", updateRecipe);
+        return "createrecipe";
+    }
+
 
     @PostMapping("/saveRecipe")
     public String saveRecipe(@ModelAttribute Recipe recipe){
@@ -56,5 +66,4 @@ public class RecipeModel {
     public String mealPlan(Model model){
         return "mealplan";
     }
-    
 }

@@ -1,3 +1,5 @@
+package com.recipes.recipebrewer.entity;
+
 /* 
 Project: < Recipe Brewer >
 Assignment: < assignment 1 >
@@ -7,8 +9,6 @@ Date: 10/23/2022
 Description: This is our recipe pojo class that contains the recipe attributes
 */
 
-
-package com.recipes.recipebrewer.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,22 +23,16 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "recipes")
-public class Recipe {
-
+@Table(name = "ingredients")
+public class Ingredient {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-    @Column(name = "recipe_name", nullable = false)
-    private String recipeName;
-    @Column(name = "ingredient", nullable = false)
-    private String ingredient;
-    @Column(name = "instructions", nullable = false)
-    private String instructions;
-    @Column(name = "cookTime", nullable = false)
-    private String cookTime;
-    @Column(name = "favourite", nullable = false)
-    private Boolean favourite = false;
-
+    @Column(name = "ingredientName", nullable = false)
+    private String ingredientName;
+    @Column(name = "amount", nullable = false)
+    private int amount;
+    @Column(name = "units", nullable = false)
+    private String units;
 }

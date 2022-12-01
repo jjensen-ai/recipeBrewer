@@ -1,27 +1,40 @@
 <div th:replace="/fragments/headStyleSheets"></div>
 <div th:replace="/fragments/navBar"></div>
-    <div class="d-flex justify-content-center">
-        <div class="favRecipes">
-            <table class="table table-dark table-striped">
-                <tr>
-                    <th>Recipe</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
-                <tr th:each="recipe: ${recipes}">
-                    <td th:text="${recipe.recipeName}"></td>
-                    <td><a role="button" class="update btn btn-primary">Update</a> </td>
-                    <td>
-                        <a th:href="@{/deleteRecipe(id=${recipe.id})}"class="update btn btn-danger" >Delete</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="justify-content-center">
-                        <a th:href="@{/createrecipe}" class="btn btn-primary w-100">Add Recipe</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
+<div class="d-flex justify-content-center">
+  <div class="favRecipes">
+    <table class="table table-dark table-striped">
+      <tr>
+        <th>Recipe</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      <tr th:each="recipe: ${recipes}">
+        <td th:text="${recipe.recipeName}"></td>
+        <td>
+          <a
+            role="button"
+            class="update btn btn-primary"
+            th:href="@{/updateRecipe/{id}(id=${recipe.id})}"
+            >Update</a
+          >
+        </td>
+        <td>
+          <a
+            th:href="@{/deleteRecipe(id=${recipe.id})}"
+            class="update btn btn-danger"
+            >Delete</a
+          >
+        </td>
+      </tr>
+      <tr>
+        <td colspan="3" class="justify-content-center">
+          <a th:href="@{/createrecipe}" class="btn btn-primary w-100"
+            >Add Recipe</a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
 
 <div th:replace="fragments/footer"></div>
