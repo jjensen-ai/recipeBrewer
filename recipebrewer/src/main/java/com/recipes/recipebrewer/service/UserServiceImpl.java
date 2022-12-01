@@ -10,6 +10,7 @@ Description: Here we are able to implement all the methods from the user service
 
 package com.recipes.recipebrewer.service;
 
+import com.recipes.recipebrewer.dto.UserDto;
 import com.recipes.recipebrewer.entity.User;
 import com.recipes.recipebrewer.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,24 +26,12 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public User getUser(Long id) {
-        return userRepository.findById(id).get();
-    }
-
-    @Override
-    public User saveUser(User user) {
-        return userRepository.save(user);
-    }
-
-
-    @Override
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
-    }
-
-    @Override
-    public List<User> getUsers() {
-        return null;
+    public void saveUser(UserDto userDto) {
+        User user = new User();
+        user.setUsername(userDto.getUsername());
+        user.setEmail(userDto.getEmail());
+        user.setPassword(userDto.getPassword());
+        userRepository.save(user);
     }
 
     @Override
@@ -50,14 +39,11 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByUsername(username);
     }
 
-    @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
+    private UserDto mapToUserDto(User user){
+        UserDto userDto = new UserDto();
+        userDto.setEmail(user.getEmail());
+        return userDto;
     }
 
-    @Override
-    public User findByPassword(String password) {
-        return userRepository.findByPassword(password);
-    }
     
 }

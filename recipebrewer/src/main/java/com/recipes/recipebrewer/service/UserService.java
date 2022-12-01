@@ -11,21 +11,25 @@ Description: This is our user service interface that contain the methods to pull
 
 package com.recipes.recipebrewer.service;
 
+import com.recipes.recipebrewer.dto.UserDto;
 import com.recipes.recipebrewer.entity.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public interface UserService {
-    User getUser(Long id);
-    User saveUser(User user);
+    // User getUser(Long id);
+    // User saveUser(User user);
+    // User findByUsername(String username);
+    // User findByEmail(String email);
+    // User findByPassword(String password);
+    // void deleteUser(Long id);
+
+    // // This checks if the users is in the database
+    // // boolean checkUser(User user);
+
+    // List<User> getUsers();
+    void saveUser(UserDto userDto);
     User findByUsername(String username);
-    User findByEmail(String email);
-    User findByPassword(String password);
-    void deleteUser(Long id);
-
-    // This checks if the users is in the database
-    // boolean checkUser(User user);
-
-    List<User> getUsers();
+    List<UserDto> findAllUsers();
 }
