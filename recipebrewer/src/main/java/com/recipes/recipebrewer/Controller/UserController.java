@@ -71,5 +71,18 @@ public class UserController {
         return "register";
     }
 
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
+    public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, ModelMap modelMap) {
+        if (result.hasErrors()) {
+            return "register";
+        }
+        else{
+            userService.saveUser(user);
+            modelMap.put("Success", "User Registered Successfully");
+            return "login";
+        }
+    }
+    
+
     
 }
