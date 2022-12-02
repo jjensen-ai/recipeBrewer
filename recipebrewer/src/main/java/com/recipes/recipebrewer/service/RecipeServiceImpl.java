@@ -44,6 +44,11 @@ public class RecipeServiceImpl implements RecipeService{
     }
 
     @Override
+    public List<Recipe> findAllByAuthor(Long author){
+        return recipeRepository.findAllByAuthor(author);
+    }
+
+    @Override
     public List<Recipe> getRecipes() {
         return (List<Recipe>) recipeRepository.findAll();
     }

@@ -22,6 +22,4 @@ public interface UserService {
     User findByUsername(String username);
     User findByEmail(String email);
     User findByPassword(String password);
-
-    // This checks if the users is in the database
 }
