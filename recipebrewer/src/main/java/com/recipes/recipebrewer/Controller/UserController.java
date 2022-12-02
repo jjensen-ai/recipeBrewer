@@ -79,6 +79,13 @@ public class UserController {
             return "login";
         }
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.removeAttribute("id");
+        session.invalidate();
+        return "login";
+    }
     
 
     
