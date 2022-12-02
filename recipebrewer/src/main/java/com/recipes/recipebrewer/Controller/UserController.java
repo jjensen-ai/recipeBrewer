@@ -59,11 +59,27 @@ public class UserController {
             }
         }
 
+   
+    // This method will handle the registration form
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
- 
+        model.addAttribute("user", new User());
         return "register";
     }
+
+    // This will handle adding in the database
+    @RequestMapping(value = "/saveUser", method = RequestMethod.POST)
+    public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, ModelMap modelMap) {
+        if (result.hasErrors()) {
+            return "register";
+        }
+        else{
+            userService.saveUser(user);
+            modelMap.put("Success", "User Registered Successfully");
+            return "login";
+        }
+    }
+    
 
     
 }
