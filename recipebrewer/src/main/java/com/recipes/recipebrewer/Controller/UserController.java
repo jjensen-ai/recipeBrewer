@@ -73,11 +73,27 @@ public class UserController {
         if (result.hasErrors()) {
             return "register";
         }
+
         else{
             userService.saveUser(user);
             modelMap.put("Success", "User Registered Successfully");
             return "login";
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.removeAttribute("id");
+        session.invalidate();
+        return "login";
+    }
+
+    @RequestMapping("/profile")
+    public String profile(HttpSession session, ModelMap modelMap){
+        Long id = (Long) session.getAttribute("id");
+        User user = userService.findById(id);
+        modelMap.put("user", user);
+        return "profile";
     }
     
 
