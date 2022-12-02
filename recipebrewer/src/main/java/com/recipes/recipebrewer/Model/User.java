@@ -7,7 +7,7 @@ Date: 10/23/2022
 Description: This is our user pojo class that contains the user attributes
 */
 
-package com.recipes.recipebrewer.entity;
+package com.recipes.recipebrewer.Model;
 
 import lombok.Getter;
 import lombok.Setter;

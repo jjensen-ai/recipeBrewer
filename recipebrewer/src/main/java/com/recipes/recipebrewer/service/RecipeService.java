@@ -10,8 +10,9 @@ Description: This is our recipe service interface that contain the methods to pu
 
 package com.recipes.recipebrewer.service;
 
-import com.recipes.recipebrewer.entity.Recipe;
 import org.springframework.stereotype.Service;
+
+import com.recipes.recipebrewer.Model.Recipe;
 
 import java.util.List;
 

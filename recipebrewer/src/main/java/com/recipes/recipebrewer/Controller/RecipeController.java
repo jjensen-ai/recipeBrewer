@@ -20,12 +20,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-import com.recipes.recipebrewer.entity.Recipe;
-
+import com.recipes.recipebrewer.Model.Recipe;
 import com.recipes.recipebrewer.service.RecipeServiceImpl;
 @Controller
-public class RecipeModel {
+public class RecipeController {
     @Autowired
     private RecipeServiceImpl recipeRepo;
     
@@ -37,7 +35,6 @@ public class RecipeModel {
 
     @GetMapping("/createrecipe")
     public String addRecipe(Model model, @RequestParam(required = false) Long id){
-
         model.addAttribute("recipes", new Recipe());
         return "createrecipe";
     }

@@ -9,7 +9,7 @@ Description: Here we are able to implement all the methods from the recipe servi
 
 package com.recipes.recipebrewer.service;
 
-import com.recipes.recipebrewer.entity.Recipe;
+import com.recipes.recipebrewer.Model.Recipe;
 import com.recipes.recipebrewer.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

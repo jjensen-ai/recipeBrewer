@@ -11,10 +11,10 @@ Description: This is our user service interface that contain the methods to pull
 
 package com.recipes.recipebrewer.service;
 
-import com.recipes.recipebrewer.entity.User;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.recipes.recipebrewer.Model.User;
+
 @Service
 public interface UserService {
     User getUser(Long id);
@@ -22,6 +22,6 @@ public interface UserService {
     User findByUsername(String username);
     User findByEmail(String email);
     User findByPassword(String password);
-    void deleteUser(Long id);
-    List<User> getUsers();
+
+    // This checks if the users is in the database
 }

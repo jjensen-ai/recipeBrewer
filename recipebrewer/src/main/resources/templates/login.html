@@ -16,8 +16,7 @@
     <div class="container formStyle mx-auto mt-5">
       <form
         method="POST"
-        th:object="${user}"
-        th:action="@{/submitItem}"
+        th:action="@{/login}"
         class="row g-3 d-inline-flex justify-content-center p-3">
         <div class="row col-auto">
           <h2 class="mx-auto">Login</h2>
@@ -26,20 +25,22 @@
           <p style="color: red" errors="*{email}"></p>
           <input
             class="form-control form-control-lg"
-            type="text"
-            field="*{email}"
+            name="email"
+            type="email"
             placeholder="Email Address" />
         </div>
         <div class="row m-2 p-2">
           <p style="color: red" errors="*{password}"></p>
           <input
             class="form-control form-control-lg"
-            type="text"
-            field="*{password}"
+            name="password"
+            type="password"
             placeholder="Password" />
         </div>
         <div class="row mt-4 p-3">
-          <a class="btn btn-primary mx-auto" th:href="@{/recipes}"> Login</a>
+          <button type="submit" class="btn btn-primary mx-auto" value="login">
+            Login
+          </button>
         </div>
         <div class="row col-auto">
           <a th:href="@{/register}"> Register</a>

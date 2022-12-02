@@ -1,6 +1,7 @@
 <div th:replace="/fragments/headStyleSheets"></div>
 <div th:replace="/fragments/navBar"></div>
 <div class="d-flex justify-content-center">
+  <h2>Welcome <span th:text="${session.id}"/> </h2>
   <div class="favRecipes">
     <table class="table table-dark table-striped">
       <tr>

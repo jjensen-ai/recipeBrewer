@@ -10,9 +10,10 @@ Description: This is our user repository that connects to crud repository
 
 package com.recipes.recipebrewer.repository;
 
-import com.recipes.recipebrewer.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.recipes.recipebrewer.Model.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
