@@ -15,6 +15,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 
@@ -43,4 +45,10 @@ public class Recipe {
     @Column(name = "author")
     private long author;
 
+    @ManyToOne
+    @JoinColumn(name = "idUser")
+    private User idUser;
+
+    @OneToMany(mappedBy = "recipe_favorite")
+    private Set<Favorites> favorites;
 }

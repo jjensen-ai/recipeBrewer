@@ -12,6 +12,8 @@ package com.recipes.recipebrewer.Model;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Set;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -51,4 +53,9 @@ public class User {
     @Size(min = 6, message = "Password is too short")
     private String password;
 
+    @OneToMany(mappedBy = "idUser")
+    private Set<Recipe> recipes;
+
+    @OneToMany(mappedBy = "recipe_favorite")
+    private Set<Favorites> selected_user;
 }
