@@ -32,34 +32,31 @@ public class UserController {
 
     @RequestMapping("/login")
     public String login(
-        @RequestParam("email") String email,
-        @RequestParam("password") String password,
-        HttpSession session,
-        ModelMap modelMap){
+            @RequestParam("email") String email,
+            @RequestParam("password") String password,
+            HttpSession session,
+            ModelMap modelMap) {
 
-            User user = userService.findByEmail(email);
+        User user = userService.findByEmail(email);
 
-            if(user != null){
-              String sessionEmail = user.getEmail();
-              String sessionPassword = user.getPassword();
-              Long userId = user.getId();  
+        if (user != null) {
+            String sessionEmail = user.getEmail();
+            String sessionPassword = user.getPassword();
+            Long userId = user.getId();
 
-                if(email.equals(sessionEmail) && password.equals(sessionPassword)){
-                    session.setAttribute("id", userId);
-                    return "recipes";
-                }
-                else{
-                    modelMap.put("Error", "Invalid Account");
-                    return "login";
-                }
-            }
-            else{
+            if (email.equals(sessionEmail) && password.equals(sessionPassword)) {
+                session.setAttribute("id", userId);
+                return "recipes";
+            } else {
                 modelMap.put("Error", "Invalid Account");
-                    return "login";
+                return "login";
             }
+        } else {
+            modelMap.put("Error", "Invalid Account");
+            return "login";
         }
+    }
 
-   
     // This method will handle the registration form
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
@@ -74,7 +71,7 @@ public class UserController {
             return "register";
         }
 
-        else{
+        else {
             userService.saveUser(user);
             modelMap.put("Success", "User Registered Successfully");
             return "login";
@@ -82,20 +79,18 @@ public class UserController {
     }
 
     @GetMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         session.removeAttribute("id");
         session.invalidate();
         return "login";
     }
 
     @RequestMapping("/profile")
-    public String profile(HttpSession session, ModelMap modelMap){
+    public String profile(HttpSession session, ModelMap modelMap) {
         Long id = (Long) session.getAttribute("id");
         User user = userService.findById(id);
         modelMap.put("user", user);
         return "profile";
     }
-    
 
-    
 }
