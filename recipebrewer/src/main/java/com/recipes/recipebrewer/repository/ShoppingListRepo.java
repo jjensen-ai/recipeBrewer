@@ -8,7 +8,6 @@ Description: This is our recipe repository that connects to crud repository
 */
 
 
-
 package com.recipes.recipebrewer.repository;
 
 import java.util.List;
@@ -16,11 +15,12 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.recipes.recipebrewer.Model.Recipe;
+import com.recipes.recipebrewer.Model.ShoppingList;
 
 @Repository
-public interface RecipeRepository extends CrudRepository<Recipe, Long> {
-    Recipe findByRecipeName (Recipe recipe);
-    List<Recipe> findAllByAuthor(Long author);
-    
+public interface ShoppingListRepo extends CrudRepository<ShoppingList, Long> {
+
+    ShoppingList findByIngredientName(ShoppingList ingredientName);
+    // List<ShoppingList> getShoppingLists(Long author);
+    List<ShoppingList> findAllByAuthor(Long author);
 }

@@ -4,23 +4,23 @@
   <div class="favRecipes">
     <table class="table table-dark table-striped">
       <tr>
-        <th>Recipe</th>
+        <th>Shopping List</th>
         <th>Update</th>
         <th>Delete</th>
       </tr>
-      <tr th:each="recipe: ${recipes}">
-        <td th:text="${recipe.recipeName}"></td>
+      <tr th:each="Shopping: ${shoppingList}">
+        <td th:text="${shoppingList.ingredientName}"></td>
         <td>
           <a
             role="button"
             class="update btn btn-primary"
-            th:href="@{/updateRecipe/{id}(id=${recipe.id})}"
+            th:href="@{/updateShoppingList/{id}(id=${shoppingList.id})}"
             >Update</a
           >
         </td>
         <td>
           <a
-            th:href="@{/deleteRecipe(id=${recipe.id})}"
+            th:href="@{/deleteShoppingList(id=${shoppingList.id})}"
             class="update btn btn-danger"
             >Delete</a
           >
@@ -28,8 +28,8 @@
       </tr>
       <tr>
         <td colspan="3" class="justify-content-center">
-          <a th:href="@{/createrecipe}" class="btn btn-primary w-100"
-            >Add Recipe</a
+          <a th:href="@{/createShoppingList}" class="btn btn-primary w-100"
+            >Add Shopping</a
           >
         </td>
       </tr>

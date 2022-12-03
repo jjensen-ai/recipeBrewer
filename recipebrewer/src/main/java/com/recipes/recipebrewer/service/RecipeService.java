@@ -23,4 +23,5 @@ public interface RecipeService {
     Recipe recipeName(Recipe name);
     void deleteRecipe(Long id);
     List<Recipe> getRecipes();
+    List<Recipe> findAllByAuthor(Long author);
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.recipes.recipebrewer.Model.Recipe;
 import com.recipes.recipebrewer.service.RecipeServiceImpl;
@@ -31,6 +32,12 @@ public class RecipeController {
     public String getRecipes(Model model){
         model.addAttribute("recipes", recipeRepo.getRecipes());
         return "recipes";
+    }
+
+    @GetMapping("/myRecipes")
+    public String myRecipes(@SessionAttribute("id") Long id, Model model){
+        model.addAttribute("myRecipes", recipeRepo.findAllByAuthor(id));
+        return "myRecipes";
     }
 
     @GetMapping("/createrecipe")

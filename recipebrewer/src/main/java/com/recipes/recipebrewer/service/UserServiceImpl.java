@@ -15,8 +15,6 @@ import com.recipes.recipebrewer.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -26,8 +24,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User saveUser(User user) {
-        user.setUsername(user.getUsername());
-        user.setEmail(user.getEmail());
+        return userRepository.save(user);
+    }
+
+    public User savePassword(User user){
         user.setPassword(user.getPassword());
         return userRepository.save(user);
     }
@@ -50,6 +50,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByPassword(String password) {
         return userRepository.findByPassword(password);
+    }
+
+    @Override
+    public User findById(Long id) {
+        return userRepository.findById(id).get();
     }
     
 }
