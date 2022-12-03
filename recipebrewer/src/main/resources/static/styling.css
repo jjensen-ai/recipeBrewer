@@ -1,56 +1,49 @@
 /* All Styling */
-*{
-    border: 0;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-a{
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    text-decoration: none;
+a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  text-decoration: none;
 }
 /* Nav Styling */
 
-
 body {
-    background-color: #121111;
-    padding: 1em;
-  }
-
-
-
-
-
-
-
-
+  background-color: #121111;
+  padding: 1em;
+}
 
 /* DashboardStyles */
 
-.favRecipes{
-    width:25em;
-    height:auto;
-    background:black;
-    margin:2em;
-    padding: 0;
+.favRecipes {
+  width: 25em;
+  height: auto;
+  margin: 2em;
+  padding: 0;
 }
 
 /* Form Styles */
-.formStyle{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    width: 35vw;
-    height: auto;
-    background-color: #0F0F0F;
-    border-radius: 1em;
-    box-shadow: 10px 10px 5px #0d0d0d;
+.formStyle {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 35vw;
+  height: auto;
+  background-color: #0f0f0f;
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px #0d0d0d;
 }
 
-.nav-link{
-    color:antiquewhite;
+.navfont {
+  color: antiquewhite;
 }
 
+.navfont:hover {
+  color: antiquewhite;
+}

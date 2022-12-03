@@ -1,18 +1,26 @@
 <body>
-        <nav class="navbar navbar-expand-lg navcontainer fixed-top">
-            <div class="container-fluid">
-                <a class="logo navbar-brand">
-                    LOGO
-                </a>
-                <div class="">
-                    <ul class="navbar-nav navMenu justify-content-end ms-auto">
-                        <li class="nav-item"><a class="nav-link navfont" th:href="@{/recipes}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link navfont" th:href="@{/search}">Recipes</a></li>
-                        <li class="nav-item"><a class="nav-link navfont" th:href="@{/mealplan}">Meal Plan</a></li>
-                        <li class="nav-item"><a class="nav-link navfont" th:href="@{/profile}">Profile</a></li>
-                        <li class="nav-item"><a class="nav-link navfont" th:href="@{/myRecipes}">My Recipes</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav> 
-
+  <nav class="navbar navbar-expand-lg navcontainer fixed-top">
+    <div class="container-fluid px-5">
+      <a class="logo navbar-brand text-white"> LOGO </a>
+      <div class="">
+        <ul class="navbar-nav navMenu justify-content-end ms-auto">
+          <li class="nav-item">
+            <a class="nav-link navfont" th:href="@{/recipes}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navfont" th:href="@{/mealplan}">Meal Plan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navfont" th:href="@{/profile}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navfont" th:href="@{/myRecipes}">My Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link navfont" th:href="@{/logout}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>

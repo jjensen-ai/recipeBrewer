@@ -19,6 +19,7 @@ import com.recipes.recipebrewer.Model.User;
 public interface UserService {
     User getUser(Long id);
     User saveUser(User user);
+    User savePassword(User password);
     User findByUsername(String username);
     User findByEmail(String email);
     User findByPassword(String password);

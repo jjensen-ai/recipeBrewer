@@ -1,7 +1,6 @@
 <div th:replace="/fragments/headStyleSheets"></div>
 <div th:replace="/fragments/navBar"></div>
     <div class="container formStyle mx-auto mt-5">
-        <h2 th:text="${session.id}"></h2>
         <form method="POST" class="row d-inline-flex justify-content-center p-3" th:action="@{/saveRecipe}" th:object="${recipes}">
             <div class="row d-inline-flex m-2 p-2">
                 <input class="form-control form-control-lg w-3" th:field="*{recipeName}" type="text" placeholder="Recipe Name">
@@ -17,7 +16,7 @@
             </div>
             <div><input type="hidden" name="author" th:value="${session.id}"></div>
             <div class="row m-2 p-2">
-                <button type="submit" class="btn btn-primary mx-auto">Create Recipe</button>
+                <button type="submit" class="btn btn-primary mx-auto">Submit</button>
             </div>
             <div><input type="hidden" th:field="*{id}"></div>
         </form>
