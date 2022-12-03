@@ -2,18 +2,17 @@ package com.recipes.recipebrewer.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.recipes.recipebrewer.Model.Favorites;
 import com.recipes.recipebrewer.Model.User;
 
+@Repository
 public interface FavoritesRepository extends CrudRepository<Favorites, Long> {
-    Favorites findByRecipeId(Long recipeId);
-
-    Favorites findByUserId(Long userId);
-
-    List<Favorites> findUser(User user);
+    @Query("SELECT f FROM Favorites f WHERE f.user = ?1")
+    public List<Favorites> findFavorites(User idUser);
 
 
 }
