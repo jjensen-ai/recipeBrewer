@@ -14,13 +14,13 @@
           <a
             role="button"
             class="update btn btn-primary"
-            th:href="@{/updateRecipe/{id}(id=${recipe.id})}"
+            th:href="@{/updateShoppingList/{id}(id=${shoppingList.id})}"
             >Update</a
           >
         </td>
         <td>
           <a
-            th:href="@{/deleteRecipe(id=${recipe.id})}"
+            th:href="@{/deleteShoppingList(id=${shoppingList.id})}"
             class="update btn btn-danger"
             >Delete</a
           >
@@ -28,7 +28,7 @@
       </tr>
       <tr>
         <td colspan="3" class="justify-content-center">
-          <a th:href="@{/createrecipe}" class="btn btn-primary w-100"
+          <a th:href="@{/createShoppingList}" class="btn btn-primary w-100"
             >Add Shopping</a
           >
         </td>
