@@ -17,13 +17,13 @@ public class Favorites {
     @Column(name = "id")
     private long id;
 
-    @ManyToOne
-    @JoinColumn(name = "idUser")
-    private User user_favorite;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "idRecipe")
-    private Recipe recipe_favorite;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 
     
 }

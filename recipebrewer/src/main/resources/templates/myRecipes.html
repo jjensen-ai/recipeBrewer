@@ -25,6 +25,15 @@
               >Delete</a
             >
           </td>
+          <td>
+            <a
+              th:action="@{/marked}" th:object="${favorite}" method="post" >
+              <input type="hidden" name="rec_id" th:value="${recipe.id}">
+              <button class="btn btn-secondary dropdown-toggle" type="submit" >
+                  Add To Favourite
+              </button>
+            >
+          </td>
         </tr>
         <tr>
           <td colspan="3" class="justify-content-center">

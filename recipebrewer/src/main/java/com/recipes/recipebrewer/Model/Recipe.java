@@ -45,10 +45,7 @@ public class Recipe {
     @Column(name = "author")
     private long author;
 
-    @ManyToOne
-    @JoinColumn(name = "idUser")
-    private User idUser;
-
-    @OneToMany(mappedBy = "recipe_favorite")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recipe")
     private Set<Favorites> favorites;
+
 }

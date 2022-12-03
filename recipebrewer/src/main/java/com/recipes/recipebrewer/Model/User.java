@@ -42,9 +42,7 @@ public class User {
     @Size(min = 6, message = "Password is too short")
     private String password;
 
-    @OneToMany(mappedBy = "idUser")
-    private Set<Recipe> recipes;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Favorites> favorites;
 
-    @OneToMany(mappedBy = "recipe_favorite")
-    private Set<Favorites> selected_user;
 }
